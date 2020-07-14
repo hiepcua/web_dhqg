@@ -18,9 +18,9 @@ $('.menu .item')
 ;
 
 // === checkbox Toggle === //
-$('.ui.checkbox')
-  .checkbox()
-;
+// $('.ui.checkbox')
+//   .checkbox()
+// ;
 
 // === Toggle === //
 $('.enable.button')
@@ -253,3 +253,56 @@ $('input[name="paymentmethod"]').on('click', function () {
 // 	}
 // });
 
+;(function(){
+	var   win = $(window),
+	html = $('html'),
+	body = $('body'),
+	page = $("#page"),
+	btnMenu = $('.btn--menu'),
+	mainMenu = $('#siteNavigation');
+
+	function inView () {
+		if (win.scrollTop() >= 47 && win.width() >= 600) {
+			page.addClass("in-view");
+		}
+		else {
+			page.removeClass("in-view");
+		}
+	}
+
+	// stick a harvard campaign link in the top bar on scroll
+	win.scroll(inView);
+
+	// run inView on page load just in case a user has made a
+	// soft refresh, so as to not load the page & have the
+	// focus point be reset to the top of the document
+	inView();
+
+
+	/*
+
+	If Touch Device Functions
+
+	*/
+	// detect if touch device
+	var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+	// Do these things if on a touch device
+	if (supportsTouch) {
+		body.addClass('is-touch-device');
+
+		var currentScrollPosition = 0;
+
+		$('.btn--mobile-site-search').on('click', function () {
+			window.scrollTo(0,0);
+			$('#searchSite').focus();
+			body.addClass('input-mode');
+			$('body').bind('touchmove', function(e){e.preventDefault();});
+		});
+
+		$('#searchSite').on('blur', function () {
+			body.removeClass('input-mode');
+			$('body').unbind('touchmove');
+		});
+	}
+})(document, window, jQuery);

@@ -47,24 +47,25 @@ define('ISHOME',true);
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<!-- Header Start -->
-	<?php include 'modules/header.php';?>
-	<!-- Header End -->
-	<!-- Left Sidebar Start -->
-	<?php include 'modules/left_sidebar.php';?>
-	<!-- Left Sidebar End -->
-	<!-- Main Content Area Start -->
-	<div id="mainArea" class="main-base wrapper">
-		<?php 
-		$com=isset($_GET['com'])?$_GET['com']:'frontpage';
-		include_once('components/com_'.$com.'/layout.php');
-		?>
+	<div id="page" class="page">
+		<!-- Header Start -->
+		<?php include 'modules/header.php';?>
+		<!-- Header End -->
+		<!-- Left Sidebar Start -->
+		<?php include 'modules/left_sidebar.php';?>
+		<!-- Left Sidebar End -->
+		<!-- Main Content Area Start -->
+		<div id="mainArea" class="main-base wrapper">
+			<?php 
+			// $com=isset($_GET['com'])?$_GET['com']:'frontpage';
+			// include_once('components/com_'.$com.'/layout.php');
+			?>
+		</div>
+		<!-- Main Content Area End -->
+		<!-- Footer Start -->
+		<?php include 'modules/footer.php';?>
+		<!-- Footer End -->
 	</div>
-	<!-- Main Content Area End -->
-	<!-- Footer Start -->
-	<?php include 'modules/footer.php';?>
-	<!-- Footer End -->
-
 	<script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
