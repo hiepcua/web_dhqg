@@ -1,5 +1,5 @@
 <!-- Footer Start -->
-<footer class="footer mt-30">
+<footer class="footer">
 	<div class="container">
 		<div class="card-news-signup text-center">
 			<p class="card-news-signup__leadin">

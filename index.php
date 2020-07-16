@@ -38,7 +38,6 @@ define('ISHOME',true);
 	<link href="css/vertical-responsive-menu.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-	<!-- <link href="css/night-mode.css" rel="stylesheet"> -->
 	
 	<!-- Vendor Stylesheets -->
 	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -51,14 +50,11 @@ define('ISHOME',true);
 		<!-- Header Start -->
 		<?php include 'modules/header.php';?>
 		<!-- Header End -->
-		<!-- Left Sidebar Start -->
-		<?php include 'modules/left_sidebar.php';?>
-		<!-- Left Sidebar End -->
 		<!-- Main Content Area Start -->
-		<div id="mainArea" class="main-base wrapper">
+		<div id="mainArea" class="main-base">
 			<?php 
-			// $com=isset($_GET['com'])?$_GET['com']:'frontpage';
-			// include_once('components/com_'.$com.'/layout.php');
+			$com=isset($_GET['com'])?$_GET['com']:'frontpage';
+			include_once('components/com_'.$com.'/layout.php');
 			?>
 		</div>
 		<!-- Main Content Area End -->

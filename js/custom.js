@@ -305,4 +305,28 @@ $('input[name="paymentmethod"]').on('click', function () {
 			$('body').unbind('touchmove');
 		});
 	}
+
+	/*
+
+	  Mobile Navigation Button
+
+	*/
+
+	// Toggle attribute states function for btnMenu
+	function toggleState ( stateOff, stateOn, attrOff, attrOn, expOff, expOn ) {
+		btnMenu.attr('data-state', btnMenu.attr('data-state') === stateOff ? stateOn : stateOff);
+
+		btnMenu.attr('aria-label', btnMenu.attr('aria-label') === attrOff ? attrOn : attrOff);
+
+		btnMenu.attr('aria-expanded', btnMenu.attr('aria-expanded') === expOff ? expOn : expOff);
+	}
+
+
+	// Actions to fire on click of btnMenu
+	btnMenu.on('click', function (e) {
+		e.preventDefault();
+		toggleState('off', 'on', 'Reveal Navigation', 'Close Navigation', 'false', 'true');
+		html.toggleClass('nav-open');
+	});
+
 })(document, window, jQuery);
